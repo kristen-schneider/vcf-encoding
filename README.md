@@ -1,1 +1,1 @@
-binary encoding for vcf files
+binary encoding for sample major genotypes in vcf files

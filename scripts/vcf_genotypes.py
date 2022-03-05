@@ -1,17 +1,10 @@
-# This is a sample Python script.
-
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-
 import random
 
-def main():
-    vcf = open('./data/easy.vcf', 'w')
-
-    num_samples = 3
+def write_genotypes(vcf_file, num_samples, num_genotypes):
+    vcf = open(vcf_file, 'w')
 
     for s in range(num_samples):
-        sample_genotype = generate_genotypes(10)
+        sample_genotype = generate_genotypes(num_genotypes)
         for sg in sample_genotype:
             vcf.write(sg)
             vcf.write('\t')
@@ -31,7 +24,3 @@ def generate_genotypes(num_genotypes):
         all_genotypes.append(genotype)
 
     return all_genotypes
-
-
-if __name__ == '__main__':
-    main()

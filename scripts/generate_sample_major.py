@@ -9,7 +9,6 @@ def write_genotypes(vcf_file, num_samples, num_genotypes):
             vcf.write(sg)
             vcf.write('\t')
         vcf.write('\n')
-        print(sample_genotype)
 
 def generate_genotypes(num_genotypes):
     # ref, primary alternate, secondary alternate, tertiary alternate, unknown

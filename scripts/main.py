@@ -3,7 +3,7 @@ import parse_vcf
 import query_full
 
 vcf_file = 'data/easy.txt'
-num_samples = 3
+num_samples = 4
 num_variants = 10
 
 m_file = 'out/maternal.txt'
@@ -15,7 +15,7 @@ def main():
     #generate_sample_major.write_genotypes(vcf_file, num_samples, num_variants)
 
     # parse vcf file and encode genotypes
-    #parse_vcf.parse_file(vcf_file, m_file, p_file, o_file)
+    parse_vcf.parse_file(vcf_file, m_file, p_file, o_file)
 
     # query
     query_full.homo_ref(o_file, num_samples, num_variants)

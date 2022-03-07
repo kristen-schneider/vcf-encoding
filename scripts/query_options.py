@@ -1,8 +1,6 @@
 import bitwise_operations
 
 def homozygous_ref(f_bit_array, num_samples, num_variants):
-
-    # 2 and queries
     HOMOZYGOUS_MASK = b'00010001'
     num_bits = len(HOMOZYGOUS_MASK)
     fulL_mask = HOMOZYGOUS_MASK * (num_samples * num_variants)
@@ -11,8 +9,6 @@ def homozygous_ref(f_bit_array, num_samples, num_variants):
 
 
 def homo_alt_o(f, num_samples, num_variants):
-    # 2 and queries, then and M/P together
-
     HOMO_ALT_O_MASK = b'00100010'
 
 def het_alt_o(f, num_samples, num_variants):

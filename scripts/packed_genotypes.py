@@ -1,15 +1,29 @@
 def encode_genotype(genotype):
-    encoded_genotype = b''
-    if genotype == str(0):
-        encoded_genotype = b'00001'
-    elif genotype == str(1):
-        encoded_genotype = b'00010'
-    elif genotype == str(2):
-        encoded_genotype = b'00100'
-    elif genotype == str(3):
-        encoded_genotype = b'01000'
-    elif genotype == '.':
-        encoded_genotype = b'10000'
-    else:
-        return -1
-    return encoded_genotype
+    one_hot_genotypes_dict = {'0|0':b'00001',
+    '1|1':b'00010',
+    '2|2':b'00011',
+    '3|3':b'00100',
+    '.|.':b'00101',
+    '0|1':b'00110',
+    '1|0':b'00111',
+    '0|2':b'01000',
+    '2|0':b'01001',
+    '0|3':b'01010',
+    '3|0':b'01011',
+    '0|.':b'01100',
+    '.|0':b'01101',
+    '1|2':b'01110',
+    '2|1':b'01111',
+    '1|3':b'10000',
+    '3|1':b'10001',
+    '1|.':b'10010',
+    '.|1':b'10011',
+    '2|3':b'10100',
+    '3|2':b'10101',
+    '2|.':b'10110',
+    '.|2':b'10111',
+    '3|.':b'11000',
+    '.|3':b'11001',
+    }
+    try: return one_hot_genotypes_dict[genotype]
+    except KeyError: return -1

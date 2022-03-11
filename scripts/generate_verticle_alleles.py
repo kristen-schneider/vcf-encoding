@@ -2,19 +2,20 @@ import random
 
 def main():
     o_file = '../vertical-allele-data/E2-'
-    num_samples = 6
-    num_variants = 5
+    num_samples = 100
+    num_variants = 1000
     all_genotypes = generate_genotypes(num_samples, num_variants)
     write_genotypes(all_genotypes, o_file, num_samples, num_variants)
 
 def generate_genotypes(num_samples, num_variants):
     alleles = ['00', '01', '10', '11']
+    weights = [0.8, 0.1, 0.05, 0.05]
 
     full_file = []
     for v in range(num_variants):
         sample = []
         for s in range(num_samples * 2):
-            two_bit_allele = [b for b in random.choice(alleles)]
+            two_bit_allele = [b for b in random.choices(alleles, weights)[0]]
             sample.append(two_bit_allele)
         full_file.append(sample)
     return full_file

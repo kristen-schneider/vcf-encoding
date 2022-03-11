@@ -1,8 +1,8 @@
 import generate_sample_major
 import parse_vcf
 
-vcf_file = 'data/homoRef.txt'
-#vcf_file = 'data/hetRefAltX.txt'
+vcf_file = 'sample-major-data/homoRef.txt'
+#vcf_file = 'sample-major-data/hetRefAltX.txt'
 # num_samples = 4
 # num_variants = 10
 
